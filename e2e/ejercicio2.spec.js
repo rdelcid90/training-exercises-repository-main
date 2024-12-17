@@ -11,6 +11,6 @@ test('Loading the page', async ({ page }) => {
     await mainPage.Enteruser();
     await mainPage.ClickOnSearchBtn();
     await page.waitForTimeout(5000);
-
+ console.log(page.locator('#root > main > section:nth-child(3) > section > article:nth-child(1) > div > h3'))
     
 })

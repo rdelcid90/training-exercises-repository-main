@@ -11,6 +11,7 @@ export class FormPage {
                 educationLevel: this.page.locator('#radio-button-1'),
                 genderOption: this.page.locator('#checkbox-2'),
                 yearsOfexperience: this.page.locator('#select-menu'),
+                submitBtn: this.page.locator('body > div > form > div > div:nth-child(15) > a'),
             }
 
     }
@@ -30,7 +31,10 @@ export class FormPage {
             await this.elements.genderOption.check();
         }
         async SelectExperience(){
-            await this.elements.yearsOfexperience.selectOption({value: '1'})
+            await this.elements.yearsOfexperience.selectOption({value: '1'});
+        }
+        async ClickSubmitButton(){
+            await this.elements.submitBtn.click();
         }
 
 }

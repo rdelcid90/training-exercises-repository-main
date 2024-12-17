@@ -13,7 +13,10 @@ test('Complete the information', async ({ page }) => {
     await formPage.SelectGender();
     await formPage.SelectExperience();
     await page.waitForTimeout(5000);
-    await page.locator('#datepicker').fill('data-date-today-highlight');
+    await page.locator('#datepicker').fill('12/12/2024');
     await page.waitForTimeout(5000);
+    await formPage.ClickSubmitButton();
+    await page.waitForTimeout(5000);
+
 
 })

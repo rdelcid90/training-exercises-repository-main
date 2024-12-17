@@ -5,8 +5,8 @@ export class MainPage {
         get elements (){
             return{
                 searchbar: this.page.locator('#root > main > section:nth-child(2) > div > form > div > input[type=text]'),
-                searchbtn: this.page.locator('#root > main > section:nth-child(2) > div > form > div > button')
-
+                searchbtn: this.page.locator('#root > main > section:nth-child(2) > div > form > div > button'),
+                repo1Value: this.page.locator('#root > main > section:nth-child(3) > section > article:nth-child(1) > div > h3')
             }
         }
 
@@ -18,4 +18,5 @@ export class MainPage {
         async ClickOnSearchBtn(){
             await this.elements.searchbtn.click();
         }
+    
 }
