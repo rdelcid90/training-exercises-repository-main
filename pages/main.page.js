@@ -13,7 +13,7 @@ export class MainPage {
         //metodos
 
         async Enteruser(){
-            await this.elements.searchbar.fill('Faried');
+            await this.elements.searchbar.fill('Faried' ,{timeout: 5000 });
         }
         async ClickOnSearchBtn(){
             await this.elements.searchbtn.click();
