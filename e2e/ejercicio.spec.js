@@ -1,10 +1,20 @@
 const { test, expect } = require ('@playwright/test');
 const { HomePage }= require ('../pages/home.page');
 
+test.beforeEach(async ({page})=> {
+
+  await page.goto('https://demoblaze.com/');
+  
+});
+test.describe('Log in Process',() => {
+  
+
+});
 
 test('Sing in page and log in', async ({ page }) => {
-  const homePage = new HomePage(page)
-  await page.goto('https://demoblaze.com/');
+  const homePage = new HomePage(page);
+  
+ 
   await homePage.ClickOnSinginLick();
   await homePage.EnterUserNameSing();
   await homePage.EnterPasswordSing();
@@ -16,7 +26,7 @@ test('Sing in page and log in', async ({ page }) => {
   await homePage.EnterPassword();
   await page.locator('#logInModal > div > div > div.modal-footer > button.btn.btn-primary').click();
 
-});
+})
 
 
 

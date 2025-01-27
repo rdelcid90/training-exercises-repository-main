@@ -6,7 +6,7 @@ export class TabsPage {
             return{
                 switchButton: this.page.locator('#new-tab-button'),
                 autoComplete: this.page.locator('body > div > div > li:nth-child(5) > a')
-
+                
             }
         }
             async CickOnSwitchBtn(){

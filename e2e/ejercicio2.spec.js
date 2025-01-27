@@ -13,7 +13,7 @@ test.describe('Search user testing',() => {
 
 test('Loading the page', async ({ page }) => {
     const mainPage = new MainPage(page);
-
+    let loc = page.locator('#root > main > section:nth-child(3) > section > article:nth-child(1) > div > h3');
     // Save the Roles value for default user
         var role = ( await page.locator('#root > main > section:nth-child(3) > section > article:nth-child(1) > div > h3').textContent());
         console.log("First user has:  " + role);
@@ -37,7 +37,7 @@ test('Loading the page', async ({ page }) => {
                             
     //Confirm the difference between values
 
-        expect (role).not.toBe(role2);
+        expect(role).not.toBe(role2);
 
     })
     

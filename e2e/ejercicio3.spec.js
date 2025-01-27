@@ -13,6 +13,8 @@ test.describe('Search user testing',() => {
 test('Complete the information', async ({ page }) => {
     const formPage = new FormPage(page);
     let URL = 'https://formy-project.herokuapp.com/thanks'
+   // const day = 11;
+   // const month =11; 
 
     // Complete TextBox fields
     await formPage.Enterfirstname();
@@ -23,11 +25,15 @@ test('Complete the information', async ({ page }) => {
     await formPage.SelectEducation();
     await formPage.SelectGender();
     
-    //Complete Dropdown fiel
+    //Complete Dropdown field
     await formPage.SelectExperience();
 
     // Date picker
-    await page.locator('#datepicker').fill('12/01/2024');
+
+    //let month = 12;
+    await page.locator('#datepicker').click //fill(`${day}``${month}` )
+    await page.locator(`//td[@class='day'][text()='${11}']`).click();
+    await page.waitForTimeout(5000);
     await page.keyboard.press('Enter');
     await page.waitForTimeout(5000);
 
@@ -37,7 +43,10 @@ test('Complete the information', async ({ page }) => {
 
     //Confirming new URL
     expect (page).toHaveURL(URL)
+
+    
 })
+
 
     
   
