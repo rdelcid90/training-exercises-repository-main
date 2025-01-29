@@ -1,5 +1,5 @@
 const { test, expect } = require ('@playwright/test');
-const { HomePage }= require ('../pages/home.page');
+const { HPage }= require ('../pages/home.page');
 
 test.beforeEach(async ({page})=> {
 
